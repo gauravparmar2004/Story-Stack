@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -18,12 +17,10 @@ const AdminDashboard = () => {
         </div>
       </header>
 
-      {/* Dashboard Content */}
       <div className="container mx-auto px-4 py-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-8">Manage Your Content</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Projects Card */}
           <Link
             to="/admin/projects"
             className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition cursor-pointer"
@@ -33,7 +30,6 @@ const AdminDashboard = () => {
             <p className="text-gray-600">Manage your projects</p>
           </Link>
 
-          {/* Clients Card */}
           <Link
             to="/admin/clients"
             className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition cursor-pointer"
@@ -43,7 +39,6 @@ const AdminDashboard = () => {
             <p className="text-gray-600">Manage client testimonials</p>
           </Link>
 
-          {/* Contacts Card */}
           <Link
             to="/admin/contacts"
             className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition cursor-pointer"
@@ -53,7 +48,6 @@ const AdminDashboard = () => {
             <p className="text-gray-600">View contact form submissions</p>
           </Link>
 
-          {/* Subscribers Card */}
           <Link
             to="/admin/subscribers"
             className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition cursor-pointer"

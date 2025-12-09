@@ -6,7 +6,6 @@ const RealTrustLogo = ({ className = "w-40 h-10" }) => {
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
     >
-      {/* House Roof Outline - Dark Blue */}
       <path
         d="M 12 8 L 6 14 L 18 14 Z"
         fill="none"
@@ -16,7 +15,6 @@ const RealTrustLogo = ({ className = "w-40 h-10" }) => {
         strokeLinejoin="round"
       />
       
-      {/* Circle with Checkmark - Bright Blue */}
       <circle
         cx="6"
         cy="20"
@@ -32,7 +30,6 @@ const RealTrustLogo = ({ className = "w-40 h-10" }) => {
         strokeLinejoin="round"
       />
       
-      {/* Real Trust Text - Dark Blue */}
       <text
         x="26"
         y="18"

@@ -85,7 +85,6 @@ const ClientsAdmin = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -109,7 +108,6 @@ const ClientsAdmin = () => {
       </header>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Add Client Form */}
         {showForm && (
           <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
             <h2 className="text-2xl font-bold mb-4">Add New Client</h2>
@@ -181,7 +179,6 @@ const ClientsAdmin = () => {
           </div>
         )}
 
-        {/* Clients List */}
         {loading ? (
           <div className="flex justify-center items-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>

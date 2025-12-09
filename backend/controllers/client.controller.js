@@ -1,6 +1,5 @@
 import Client from '../models/Client.model.js';
 
-// Get all clients
 export const getClients = async (req, res) => {
   try {
     const clients = await Client.find().sort({ createdAt: -1 });
@@ -10,7 +9,6 @@ export const getClients = async (req, res) => {
   }
 };
 
-// Create a client
 export const createClient = async (req, res) => {
   try {
     const { name, description, designation } = req.body;
@@ -39,7 +37,6 @@ export const createClient = async (req, res) => {
   }
 };
 
-// Delete a client
 export const deleteClient = async (req, res) => {
   try {
     const { id } = req.params;

@@ -89,7 +89,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
@@ -99,7 +98,6 @@ const Home = () => {
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex justify-between items-center h-20">
-            {/* Logo and Brand */}
             <div
               className="flex items-center gap-3 cursor-pointer group"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -109,7 +107,6 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center gap-1">
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -148,7 +145,6 @@ const Home = () => {
               </button>
             </nav>
 
-            {/* Admin Panel Button */}
             <div className="hidden lg:flex items-center gap-4">
               <a
                 href="/admin"
@@ -159,7 +155,6 @@ const Home = () => {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
@@ -183,7 +178,6 @@ const Home = () => {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
               mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -231,14 +225,11 @@ const Home = () => {
         </div>
       </header>
 
-      {/* Spacer for fixed header */}
       <div className="h-20"></div>
 
-      {/* Hero Section */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-20 lg:py-10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            {/* Left Side - Text Content */}
             <div className="text-center lg:text-left space-y-6">
               <div className="inline-block px-4 py-2 bg-blue-50 text-blue-600 rounded-full text-sm font-semibold mb-4">
                 Welcome to Real Trust
@@ -266,7 +257,6 @@ const Home = () => {
                 </button>
               </div>
               
-              {/* Stats */}
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">500+</div>
@@ -283,7 +273,6 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right Side - Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
@@ -295,7 +284,6 @@ const Home = () => {
                   }}
                 />
               </div>
-              {/* Decorative elements */}
               <div className="absolute -z-10 top-8 right-8 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
               <div className="absolute -z-10 bottom-8 left-8 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50"></div>
             </div>
@@ -303,7 +291,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Projects Section */}
       <section id="projects" className="py-20 lg:py-28 bg-white scroll-mt-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -318,7 +305,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Happy Clients Section */}
       <section id="clients" className="py-20 lg:py-28 bg-gray-50 scroll-mt-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -333,7 +319,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Contact Form Section */}
       <section id="contact" className="py-20 lg:py-28 bg-white scroll-mt-24">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -347,7 +332,6 @@ const Home = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
-            {/* Left Side - Image & Info */}
             <div className="space-y-8">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
@@ -361,7 +345,6 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Right Side - Form */}
             <div>
               <div className="bg-white border border-gray-200 rounded-3xl shadow-xl p-8 lg:p-10">
                 <div className="mb-8">
@@ -377,9 +360,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Newsletter Section with Background Image */}
       <section id="newsletter" className="py-20 lg:py-24 scroll-mt-24 relative overflow-hidden">
-        {/* Background Image - You can change this image URL */}
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=500&fit=crop&q=80"
@@ -397,7 +378,6 @@ const Home = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              {/* Left Side - Text */}
               <div className="text-center lg:text-left text-white flex-1">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight">
                   Learn more about our listing process, as well as our additional staging and design work.
@@ -407,7 +387,6 @@ const Home = () => {
                 </p>
               </div>
               
-              {/* Right Side - Newsletter Form */}
               <div className="flex flex-col items-center lg:items-end gap-4 flex-shrink-0">
                 <span className="text-white text-lg font-medium">Subscribe to our newsletter</span>
                 <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl">
@@ -419,7 +398,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 py-12">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">

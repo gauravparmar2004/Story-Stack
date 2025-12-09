@@ -8,7 +8,6 @@ import { promises as fsPromises } from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Ensure uploads directory exists
 const uploadsDir = path.join(__dirname, '../uploads');
 if (!fs.existsSync(uploadsDir)) {
   fs.mkdirSync(uploadsDir, { recursive: true });
@@ -40,7 +39,6 @@ const upload = multer({
   },
 });
 
-// Middleware to process image with Sharp
 export const processImage = async (req, res, next) => {
   if (!req.file) {
     return next();
@@ -53,7 +51,6 @@ export const processImage = async (req, res, next) => {
       'processed-' + req.file.filename
     );
 
-    // Process image with Sharp
     await sharp(inputPath)
       .resize(450, 350, {
         fit: 'cover',
@@ -62,22 +59,18 @@ export const processImage = async (req, res, next) => {
       .jpeg({ quality: 90 })
       .toFile(outputPath);
 
-    // Delete original file
     try {
       await fsPromises.unlink(inputPath);
     } catch (unlinkError) {
       console.warn('Could not delete original file:', unlinkError);
-      // Continue even if deletion fails
     }
 
-    // Update file path to processed image
     req.file.path = outputPath;
     req.file.filename = 'processed-' + req.file.filename;
 
     next();
   } catch (error) {
     console.error('Image processing error:', error);
-    // If Sharp fails, use the original file
     console.log('Using original file instead of processed version');
     next();
   }

@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Get all projects
 export const getProjects = async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
@@ -15,7 +14,6 @@ export const getProjects = async (req, res) => {
   }
 };
 
-// Create a project
 export const createProject = async (req, res) => {
   try {
     const { name, description } = req.body;
@@ -47,7 +45,6 @@ export const createProject = async (req, res) => {
   }
 };
 
-// Delete a project
 export const deleteProject = async (req, res) => {
   try {
     const { id } = req.params;

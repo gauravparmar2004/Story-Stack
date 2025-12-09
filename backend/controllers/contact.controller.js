@@ -1,6 +1,5 @@
 import Contact from '../models/Contact.model.js';
 
-// Get all contact entries
 export const getContacts = async (req, res) => {
   try {
     const contacts = await Contact.find().sort({ createdAt: -1 });
@@ -10,7 +9,6 @@ export const getContacts = async (req, res) => {
   }
 };
 
-// Create a contact entry
 export const createContact = async (req, res) => {
   try {
     const { fullName, email, mobile, city } = req.body;

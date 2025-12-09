@@ -24,7 +24,6 @@ const ClientsSection = ({ clients, loading }) => {
           key={client._id}
           className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center hover:shadow-lg transition-shadow duration-300"
         >
-          {/* Circular Profile Picture */}
           <div className="w-20 h-20 rounded-full overflow-hidden mb-4 flex-shrink-0">
             <img
               src={getImageUrl(client.image)}
@@ -36,17 +35,14 @@ const ClientsSection = ({ clients, loading }) => {
             />
           </div>
           
-          {/* Testimonial Text */}
           <p className="text-gray-600 text-sm mb-4 line-clamp-4 leading-relaxed flex-grow">
             "{client.description}"
           </p>
           
-          {/* Client Name */}
           <h4 className="text-blue-600 font-semibold text-base mb-1">
             {client.name}
           </h4>
           
-          {/* Client Designation */}
           <p className="text-gray-500 text-sm">
             {client.designation}
           </p>

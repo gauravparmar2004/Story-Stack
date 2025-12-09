@@ -17,27 +17,22 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Request logging middleware - logs all incoming requests
 app.use((req, res, next) => {
   console.log(`📥 ${req.method} ${req.url} - ${new Date().toLocaleTimeString()}`);
   next();
 });
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve uploaded images
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
 app.use('/api/projects', projectRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/subscribe', newsletterRoutes);
 
-// Root route - shows all available endpoints
 app.get('/', (req, res) => {
   res.json({
     message: 'Story-Stack API is running!',
@@ -52,7 +47,6 @@ app.get('/', (req, res) => {
   });
 });
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
   if (err instanceof multer.MulterError) {
@@ -67,15 +61,14 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Database connection
 if (!process.env.MONGODB_URI) {
   console.error('❌ MONGODB_URI is not defined in .env file!');
 } else {
   mongoose
     .connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 10000, // 10 seconds
-      socketTimeoutMS: 45000, // 45 seconds
-      connectTimeoutMS: 10000, // 10 seconds
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+      connectTimeoutMS: 10000,
     })
     .then(() => {
       console.log('✅ Connected to MongoDB');

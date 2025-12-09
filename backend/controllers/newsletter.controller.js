@@ -1,6 +1,5 @@
 import Newsletter from '../models/Newsletter.model.js';
 
-// Get all newsletter subscribers
 export const getSubscribers = async (req, res) => {
   try {
     const subscribers = await Newsletter.find().sort({ createdAt: -1 });
@@ -10,7 +9,6 @@ export const getSubscribers = async (req, res) => {
   }
 };
 
-// Subscribe to newsletter
 export const subscribeNewsletter = async (req, res) => {
   try {
     const { email } = req.body;
@@ -19,7 +17,6 @@ export const subscribeNewsletter = async (req, res) => {
       return res.status(400).json({ message: 'Email is required' });
     }
 
-    // Check if email already exists
     const existingSubscriber = await Newsletter.findOne({ email });
     if (existingSubscriber) {
       return res.status(400).json({ message: 'Email already subscribed' });
