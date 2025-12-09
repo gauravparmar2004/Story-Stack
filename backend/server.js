@@ -17,6 +17,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+// Request logging middleware - logs all incoming requests
+app.use((req, res, next) => {
+  console.log(`📥 ${req.method} ${req.url} - ${new Date().toLocaleTimeString()}`);
+  next();
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -30,6 +36,21 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/subscribe', newsletterRoutes);
+
+// Root route - shows all available endpoints
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Story-Stack API is running!',
+    status: 'success',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      projects: '/api/projects',
+      clients: '/api/clients',
+      contact: '/api/contact',
+      subscribe: '/api/subscribe'
+    }
+  });
+});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
